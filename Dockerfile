@@ -24,8 +24,9 @@ COPY mix.exs ./
 COPY mix.lock ./
 RUN mix local.hex --force && \
     mix local.rebar --force && \
-    mix deps.get --only prod && \
-    mix deps.compile
+    mix deps.get --only $MIX_ENV && \
+    mix deps.compile && \
+    mix compile
 
 COPY assets/package.json assets/package-lock.json ./assets/
 COPY tracker/package.json tracker/package-lock.json ./tracker/
@@ -53,7 +54,7 @@ RUN mix release plausible
 
 # Main Docker Image
 FROM alpine:3.13.3
-LABEL maintainer="tckb <tckb@tgrthi.me>"
+LABEL maintainer="hendriltobing <hendriltobing@gmail.com>"
 ENV LANG=C.UTF-8
 
 RUN apk upgrade --no-cache

@@ -72,6 +72,9 @@ export default function ListReport(props) {
     const maxWidthDeduction =  showConversionRate ? "10rem" : "5rem"
     const lightBackground = props.color || 'bg-green-50'
     const noop = () => {}
+    const baseUrl = props.baseUrl
+    const path = listItem.name
+    const url = baseUrl ? ('https://' + baseUrl + path) : path
 
     return (
       <div className="flex items-center justify-between my-1 text-sm" key={listItem.name}>
@@ -86,7 +89,7 @@ export default function ListReport(props) {
             <Link onClick={props.onClick || noop} className="md:truncate block hover:underline" to={{search: query.toString()}}>
               {props.renderIcon && props.renderIcon(listItem)}
               {props.renderIcon && ' '}
-              {listItem.name}
+              {url}
             </Link>
             <ExternalLink item={listItem} externalLinkDest={props.externalLinkDest}  />
           </span>

@@ -22,6 +22,7 @@ function EntryPages({query, site}) {
       valueLabel="Unique Entrances"
       valueKey="unique_entrances"
       detailsLink={url.sitePath(site, '/entry-pages')}
+      baseUrl={site.domain}
       query={query}
       externalLinkDest={externalLinkDest}
       color="bg-orange-50"
@@ -46,6 +47,7 @@ function ExitPages({query, site}) {
       valueLabel="Unique Exits"
       valueKey="unique_exits"
       detailsLink={url.sitePath(site, '/exit-pages')}
+      baseUrl={site.domain}
       query={query}
       externalLinkDest={externalLinkDest}
       color="bg-orange-50"
@@ -68,6 +70,7 @@ function TopPages({query, site}) {
       filter={{page: 'name'}}
       keyLabel="Page"
       detailsLink={url.sitePath(site, '/pages')}
+      baseUrl={site.domain}
       query={query}
       externalLinkDest={externalLinkDest}
       color="bg-orange-50"

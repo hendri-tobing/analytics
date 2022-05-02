@@ -144,7 +144,7 @@
   var fileTypesToTrack = (fileTypesAttr && fileTypesAttr.split(",")) || (addFileTypesAttr && addFileTypesAttr.split(",").concat(defaultFileTypes)) || defaultFileTypes;
 
   function handleDownload(event) {
-    
+
     var link = event.target;
     var middle = event.type === 'auxclick' && event.which === 2;
     var click = event.type === 'click';
