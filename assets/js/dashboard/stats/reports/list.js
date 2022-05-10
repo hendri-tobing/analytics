@@ -72,9 +72,9 @@ export default function ListReport(props) {
     const maxWidthDeduction =  showConversionRate ? "10rem" : "5rem"
     const lightBackground = props.color || 'bg-green-50'
     const noop = () => {}
-    const baseUrl = props.baseUrl
+    const hostname = props.hostname
     const path = listItem.name
-    const url = baseUrl ? ('https://' + baseUrl + path) : path
+    const url = hostname ? ('https:/' + hostname + path) : path
 
     return (
       <div className="flex items-center justify-between my-1 text-sm" key={listItem.name}>
